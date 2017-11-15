@@ -29,7 +29,14 @@ public class Sorting {
      * @return the sorted array, or null on failure
      */
     static int[] bubbleSort(final int[] array) {
-        return null;
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] < array[i - 1]) {
+                int temp = array[i];
+                array[i] = array[i - 1];
+                array[i - 1] = temp;
+            }
+        }
+        return array;
     }
 
     /**
@@ -39,7 +46,31 @@ public class Sorting {
      * @return the sorted array, or null on failure
      */
     static int[] selectionSort(final int[] array) {
-        return null;
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length; j++) {
+                findMin()
+            }
+        }
+
+    static int findMin(int[] data, int lo, int hi) {
+        int min = data[0];
+        for (int i = 1; i < data.length; i++) {
+            if (data[i] < min) {
+                min = data[i];
+            }
+        }
+        return min;
+    }
+    static void swap(int[] data, int x, int y) {
+        int temp;
+        data[x] = temp;
+        temp = data[y];
+        data[x] = data[y];
+    }
+    swap(array, lo, findMin(array, lo, hi));
+    sort(array, lo + 1, hi);
+        return array;
+
     }
 
     /**
@@ -78,7 +109,12 @@ public class Sorting {
             right[j] = arr[m + 1 + j];
         }
 
-        /* TO DO: Merge left and right array here */
+        for (int k = 0; k < arr.length; k++) {
+            if (k < left.length) {
+                arr[k] = left[k];
+            }
+            arr[k] = right[k];
+        }
         return arr;
     }
 
